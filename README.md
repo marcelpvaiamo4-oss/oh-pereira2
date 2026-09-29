@@ -11,7 +11,7 @@ Site do restaurante **Oh Pereira — Casa de Pasto**, cozinha portuguesa na R. A
 
 ## Como funciona
 
-Site estático em **um único arquivo** (`index.html`), com HTML, CSS e JavaScript puros. As imagens estão embutidas no próprio arquivo e as fontes vêm do Google Fonts. Não há build nem dependências para instalar.
+Site estático em HTML, CSS e JavaScript puros: a página é o `index.html` e as fotos ficam como arquivos separados na mesma pasta. As fontes vêm do Google Fonts. Não há build nem dependências para instalar.
 
 Para ver localmente, basta abrir o `index.html` no navegador.
 

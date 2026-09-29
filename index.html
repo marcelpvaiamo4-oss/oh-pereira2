@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oh Pereira — Casa de Pasto | Restaurante Português em Lisboa</title>
+<meta name="description" content="Casa de Pasto tradicional portuguesa em Lisboa. Bifes, petiscos, grelha e boa mesa na Rua Arco do Cego, desde 1930.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Oh Pereira — Casa de Pasto",
+  "servesCuisine": "Portuguese",
+  "priceRange": "€€",
+  "telephone": "+351914722810",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Arco do Cego 59",
+    "postalCode": "1000-146",
+    "addressLocality": "Lisboa",
+    "addressCountry": "PT"
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"12:00","closes":"23:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"12:00","closes":"23:59"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"12:00","closes":"17:00"}
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#111111;
+  --charcoal:#181818;
+  --charcoal-2:#1f1d1a;
+  --cream:#F5F1E8;
+  --parchment:#E8E0D2;
+  --white:#FFFFFF;
+  --wine:#6B1E23;
+  --wine-soft:#8a2f35;
+  --brass:#a9834e;
+  --line-on-cream: rgba(17,17,17,0.14);
+  --line-on-dark: rgba(245,241,232,0.16);
+  --space-xs:8px; --space-sm:16px; --space-md:28px; --space-lg:48px; --space-xl:96px;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="light"]){
+    --ink:#111111; --charcoal:#181818; --cream:#F5F1E8; --parchment:#E8E0D2; --white:#FFFFFF; --wine:#6B1E23; --brass:#a9834e;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#111111; --charcoal:#181818; --cream:#F5F1E8; --parchment:#E8E0D2; --white:#FFFFFF; --wine:#6B1E23; --brass:#a9834e;
+}
+*{ box-sizing:border-box; }
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top: calc(70px + env(safe-area-inset-top,0px));
+}
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Manrope', ui-sans-serif, system-ui, sans-serif;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{ font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-weight:500; margin:0; }
+p{ margin:0; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+:focus-visible{ outline:2px solid var(--wine); outline-offset:3px; }
+.wrap{ max-width:1180px; margin:0 auto; padding-inline:24px; }
+@media (max-width:640px){ .wrap{ padding-inline:20px; } }
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding-top:env(safe-area-inset-top,0px);
+  transition:background-color .4s ease, box-shadow .4s ease;
+}
+.nav.solid{ background:rgba(17,17,17,0.94); box-shadow:0 1px 0 var(--line-on-dark); backdrop-filter:blur(6px); }
+.nav-badge{
+  width:52px; height:52px; flex:none; color:var(--white);
+}
+.nav-inner{
+  max-width:1180px; margin:0 auto; padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.brand{ font-family:'Cormorant Garamond',serif; font-size:1.5rem; letter-spacing:0.02em; color:var(--white); }
+.brand span{ display:block; font-family:'Manrope',sans-serif; font-size:0.56rem; letter-spacing:0.22em; color:var(--parchment); margin-top:1px; }
+.nav-links{ display:none; align-items:center; gap:34px; }
+.nav-links a{ color:var(--white); font-size:0.92rem; }
+.nav-cta{
+  border:1px solid rgba(245,241,232,0.55); padding:9px 18px; border-radius:2px; color:var(--white); font-size:0.85rem;
+  transition:background-color .25s ease, border-color .25s ease;
+}
+.nav-cta:hover{ background:var(--white); color:var(--ink); border-color:var(--white); }
+@media (min-width:900px){ .nav-links{ display:flex; } }
+.ig-pill{
+  display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(245,241,232,0.5);
+  border-radius:999px; padding:9px 18px 9px 14px; color:var(--white); font-size:0.78rem; letter-spacing:0.08em;
+  transition:background-color .25s ease, border-color .25s ease;
+}
+.ig-pill:hover{ background:rgba(245,241,232,0.12); }
+.ig-pill svg{ width:16px; height:16px; }
+.burger{
+  display:flex; flex-direction:column; gap:5px; background:none; border:0; padding:12px; cursor:pointer;
+}
+@media (min-width:900px){ .burger{ display:none; } }
+.burger span{ width:22px; height:1.5px; background:var(--white); display:block; }
+.mnav{
+  position:fixed; inset:0; z-index:99; background:var(--ink); color:var(--cream);
+  display:flex; flex-direction:column; justify-content:center; gap:28px; padding:32px;
+  transform:translateY(-100%); transition:transform .45s cubic-bezier(.6,0,.2,1);
+}
+.mnav.open{ transform:translateY(0); }
+.mnav a{ font-family:'Cormorant Garamond',serif; font-size:2rem; }
+.mnav .mnav-cta{ font-family:'Manrope',sans-serif; font-size:1rem; border:1px solid var(--line-on-dark); padding:12px 20px; width:fit-content; border-radius:2px; margin-top:12px; }
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative; min-height:100svh; display:flex; align-items:flex-end;
+  background:#0c0c0c; overflow:hidden;
+}
+.hero-media{
+  position:absolute; inset:0; opacity:0; animation:heroin 1.6s ease forwards;
+}
+@keyframes heroin{ from{ opacity:0; } to{ opacity:1; } }
+.hero-img{
+  position:absolute; inset:-8% 0 -8% 0; width:100%; height:116%; object-fit:cover; object-position:center 38%;
+  will-change:transform;
+}
+.hero::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(10,10,10,0.42) 0%, rgba(10,10,10,0.22) 32%, rgba(10,10,10,0.72) 100%);
+}
+.hero-content{
+  position:relative; z-index:2; width:100%; padding:0 24px calc(56px + env(safe-area-inset-bottom,0px));
+  color:var(--white);
+}
+.hero-inner{ max-width:1180px; margin:0 auto; }
+.hero-eyebrow{ font-size:0.78rem; letter-spacing:0.28em; color:var(--parchment); margin-bottom:22px; font-weight:600; }
+.hero h1{ font-size:clamp(2.6rem, 8vw, 5.2rem); line-height:1.05; letter-spacing:0.005em; }
+.hero h1 em{ display:block; font-style:italic; color:var(--brass); font-weight:400; margin-top:2px; }
+.hero-sub{ max-width:46ch; font-size:0.98rem; line-height:1.6; color:rgba(245,241,232,0.86); margin-top:22px; }
+.hero-ctas{ display:flex; gap:14px; margin-top:34px; flex-wrap:wrap; }
+.btn-line{
+  display:inline-flex; align-items:center; gap:10px; padding:15px 28px; font-size:0.78rem; letter-spacing:0.14em;
+  border:1px solid rgba(245,241,232,0.55); color:var(--white); transition:background-color .25s ease;
+}
+.btn-line:hover{ background:rgba(245,241,232,0.1); }
+.btn-line svg{ width:15px; height:15px; transition:transform .25s ease; }
+.btn-line:hover svg{ transform:translateX(4px); }
+.hero-infobar{
+  margin-top:64px; display:flex; gap:44px; flex-wrap:wrap;
+}
+.hero-infobar .item{ display:flex; align-items:flex-start; gap:12px; }
+.hero-infobar svg{ width:19px; height:19px; color:var(--brass); flex:none; margin-top:2px; }
+.hero-infobar .l1{ font-size:0.92rem; color:var(--white); }
+.hero-infobar .l2{ font-size:0.82rem; color:rgba(245,241,232,0.68); margin-top:2px; }
+.hero-infobar a.l2{ color:var(--brass); }
+@media (max-width:640px){ .hero-infobar{ gap:26px; } }
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:14px 26px; font-size:0.88rem; letter-spacing:0.03em;
+  border-radius:2px; transition:transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn-solid{ background:var(--wine); color:var(--white); border:1px solid var(--wine); }
+.btn-solid:hover{ background:var(--wine-soft); }
+.btn-outline{ border:1px solid rgba(245,241,232,0.6); color:var(--white); }
+.btn-outline:hover{ background:rgba(245,241,232,0.12); }
+.btn:active{ transform:scale(0.98); }
+
+
+/* ---------- SECTION SCAFFOLD ---------- */
+section{ position:relative; }
+.pad{ padding:var(--space-xl) 0; }
+@media (max-width:640px){ .pad{ padding:var(--space-lg) 0; } }
+.eyebrow-none{ display:none; }
+.section-head{ max-width:640px; }
+.kicker{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--wine); margin-bottom:6px; }
+.section-head h2{ font-size:clamp(2.1rem,5vw,3.1rem); line-height:1.05; }
+.h2-sub{ font-size:clamp(1.6rem,3.4vw,2rem); line-height:1.08; }
+
+/* reveal on scroll */
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .8s ease, transform .8s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+/* ---------- A CASA ---------- */
+.casa{ background:var(--cream); }
+.casa-grid{
+  display:grid; grid-template-columns: 1.25fr 0.9fr; gap:20px 40px; margin-top:var(--space-lg); align-items:start;
+}
+.casa-grid figure{ margin:0; overflow:hidden; }
+.casa-grid img{ width:100%; height:100%; object-fit:cover; }
+.casa-big{ grid-column:1; grid-row:1 / span 2; aspect-ratio:4/5; }
+.casa-small{ grid-column:2; grid-row:1; aspect-ratio:1/1; align-self:end; }
+.casa-text{ grid-column:2; grid-row:2; padding-top:6px; }
+.casa-text p{ font-size:1.02rem; line-height:1.75; color:#2b2b2b; }
+.casa-text p + p{ margin-top:16px; }
+.casa-cap{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--wine); margin-bottom:10px; }
+@media (max-width:800px){
+  .casa-grid{ grid-template-columns:1fr; }
+  .casa-big{ grid-column:1; grid-row:1; aspect-ratio:4/3; }
+  .casa-small{ grid-column:1; grid-row:2; aspect-ratio:16/9; }
+  .casa-text{ grid-column:1; grid-row:3; }
+}
+
+/* ---------- GASTRONOMIA (dark) ---------- */
+.gastro{ background:var(--charcoal); color:var(--cream); }
+.gastro .kicker{ color:var(--brass); }
+.gastro-row{
+  display:grid; grid-template-columns: 0.95fr 1.05fr; gap:36px; align-items:center;
+  padding-block:44px; border-top:1px solid var(--line-on-dark);
+}
+.gastro-row:first-of-type{ border-top:none; margin-top:var(--space-lg); }
+.gastro-row:nth-child(even) .gastro-fig{ order:2; }
+.gastro-name{ font-size:clamp(1.7rem,3.4vw,2.3rem); }
+.gastro-items{ margin-top:16px; display:flex; flex-direction:column; gap:8px; }
+.gastro-items span{ font-size:0.98rem; color:rgba(245,241,232,0.82); }
+.gastro-fig{ aspect-ratio:4/5; overflow:hidden; }
+.gastro-fig img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.gastro-fig:hover img{ transform:scale(1.035); }
+@media (max-width:760px){
+  .gastro-row{ grid-template-columns:1fr; padding-block:34px; }
+  .gastro-row:nth-child(even) .gastro-fig{ order:0; }
+  .gastro-fig{ aspect-ratio:16/10; }
+}
+.gastro-cta{ margin-top:var(--space-lg); }
+
+/* ---------- CARTA DIGITAL ---------- */
+.carta{ background:var(--cream); }
+.tabs{
+  position:sticky; top:calc(64px + env(safe-area-inset-top,0px)); z-index:20;
+  display:flex; gap:6px; overflow-x:auto; padding:14px 0; margin-top:40px;
+  background:var(--cream); border-bottom:1px solid var(--line-on-cream);
+  scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{ display:none; }
+.tab{
+  flex:0 0 auto; padding:9px 18px; font-size:0.86rem; border:1px solid var(--line-on-cream); border-radius:20px;
+  color:#444; white-space:nowrap; transition:background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.tab.active{ background:var(--ink); color:var(--cream); border-color:var(--ink); }
+.menu-cat{ padding-top:44px; scroll-margin-top:150px; }
+.menu-cat h3{ font-size:1.7rem; color:var(--wine); margin-bottom:6px; }
+.menu-cat .sub{ font-size:0.86rem; color:#6b6b6b; margin-bottom:22px; }
+.menu-list{ display:flex; flex-direction:column; }
+.menu-item{
+  padding:14px 0; border-top:1px solid var(--line-on-cream); transition:background-color .2s ease;
+}
+.menu-item.in-cart{ background:rgba(107,30,35,0.05); }
+.menu-item .row{ display:flex; align-items:baseline; gap:14px; }
+.menu-item .name{ font-size:1.05rem; }
+.menu-item .fill{ flex:1; border-bottom:1px dotted rgba(17,17,17,0.22); transform:translateY(-4px); }
+.menu-item .price{ font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--ink); white-space:nowrap; }
+.menu-item .note{ display:block; font-size:0.8rem; color:#7a7a7a; margin-top:2px; }
+.qty-stepper{ display:flex; align-items:center; justify-content:flex-end; gap:var(--space-sm); margin-top:var(--space-xs); }
+.qty-btn{
+  width:40px; height:40px; border-radius:50%; border:1px solid var(--line-on-cream); background:var(--white);
+  color:var(--ink); font-size:1.25rem; line-height:1; display:flex; align-items:center; justify-content:center;
+  transition:background-color .2s ease, border-color .2s ease, transform .15s ease;
+}
+.qty-btn:active{ transform:scale(0.9); }
+.qty-btn.plus{ background:var(--wine); border-color:var(--wine); color:var(--white); }
+@media (hover:hover) and (pointer:fine){
+  .qty-btn:hover{ border-color:var(--wine); }
+  .qty-btn.plus:hover{ background:var(--wine-soft); }
+  .tab:hover{ border-color:var(--ink); }
+  .cart-bar .send-btn:hover{ background:var(--wine-soft); }
+}
+.qty-count{ min-width:1.6em; text-align:center; font-size:1.05rem; font-variant-numeric:tabular-nums; }
+
+.cart-bar{
+  position:fixed; left:0; right:0; bottom:0; z-index:90;
+  background:var(--ink); color:var(--white);
+  transform:translateY(110%); transition:transform .35s cubic-bezier(.2,.9,.2,1);
+  padding:var(--space-sm) 20px calc(var(--space-sm) + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -6px 24px rgba(0,0,0,0.25);
+}
+.cart-bar.show{ transform:translateY(0); }
+.cart-bar-inner{
+  max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:var(--space-sm);
+}
+.cart-info{ font-size:0.88rem; color:rgba(245,241,232,0.85); }
+.cart-info strong{ color:var(--white); font-size:1rem; }
+.cart-bar .send-btn{
+  display:inline-flex; align-items:center; gap:var(--space-xs); background:var(--wine); color:var(--white);
+  padding:13px 24px; border-radius:2px; font-size:0.95rem; font-weight:600; letter-spacing:0.01em; white-space:nowrap;
+}
+.cart-bar .send-btn svg{ width:17px; height:17px; }
+@media (max-width:480px){
+  .cart-info strong{ display:block; }
+}
+
+/* ---------- EXPERIENCE ---------- */
+.exper{ background:var(--parchment); }
+.exper-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:var(--space-lg); }
+.exper-fig{ overflow:hidden; }
+.exper-fig img{ width:100%; height:100%; object-fit:cover; }
+.exper-fig:nth-child(1){ aspect-ratio:3/4; }
+.exper-fig:nth-child(2){ aspect-ratio:3/4; margin-top:36px; }
+.exper-fig:nth-child(3){ aspect-ratio:3/4; }
+.exper-text{ max-width:56ch; margin-top:36px; font-size:1.02rem; line-height:1.75; color:#2b2b2b; }
+@media (max-width:760px){
+  .exper-grid{ grid-template-columns:1fr 1fr; }
+  .exper-fig:nth-child(3){ grid-column:1 / span 2; aspect-ratio:16/9; margin-top:0; }
+  .exper-fig:nth-child(2){ margin-top:0; }
+}
+
+/* ---------- GALERIA ---------- */
+.galeria{ background:var(--cream); }
+.mason{ column-count:2; column-gap:16px; margin-top:var(--space-lg); }
+.mason figure{ margin:0 0 16px; break-inside:avoid; overflow:hidden; cursor:zoom-in; }
+.mason img{ width:100%; display:block; transition:transform .5s ease; }
+.mason figure:hover img{ transform:scale(1.03); }
+@media (min-width:720px){ .mason{ column-count:3; } }
+.lightbox{
+  position:fixed; inset:0; background:rgba(10,10,10,0.94); z-index:200; display:none;
+  align-items:center; justify-content:center; padding:32px;
+}
+.lightbox.open{ display:flex; }
+.lightbox img{ max-width:100%; max-height:90vh; }
+.lightbox-close{
+  position:absolute; top:calc(24px + env(safe-area-inset-top,0px)); right:24px; color:var(--white);
+  background:none; border:0; font-size:1.8rem; line-height:1; cursor:pointer;
+}
+
+/* ---------- RESERVA ---------- */
+.reserva{ background:var(--ink); color:var(--white); text-align:center; }
+.reserva .kicker{ color:var(--brass); }
+.reserva h2{ font-size:clamp(2.3rem,6vw,3.6rem); max-width:16ch; margin-inline:auto; }
+.reserva-sub{ max-width:44ch; margin:18px auto 0; color:rgba(245,241,232,0.78); font-size:1rem; }
+.reserva-ctas{ display:flex; gap:16px; justify-content:center; margin-top:36px; flex-wrap:wrap; }
+.reserva-addr{ margin-top:44px; font-size:0.9rem; color:rgba(245,241,232,0.62); line-height:1.7; }
+
+/* ---------- HORARIOS + LOCAL ---------- */
+.info{ background:var(--parchment); }
+.info-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:var(--space-lg); margin-top:var(--space-lg); align-items:start; }
+.hours-list{ margin-top:22px; }
+.hours-row{
+  display:flex; justify-content:space-between; padding:11px 0; border-top:1px solid var(--line-on-cream); font-size:0.98rem;
+}
+.hours-row:last-child{ border-bottom:1px solid var(--line-on-cream); }
+.hours-row.today{ color:var(--wine); font-weight:600; }
+.map-frame{ aspect-ratio:4/3; background:var(--ink); position:relative; overflow:hidden; }
+.map-frame svg{ width:100%; height:100%; }
+.map-pin{ position:absolute; top:50%; left:50%; transform:translate(-50%,-100%); }
+.local-addr{ margin-top:20px; font-size:1rem; line-height:1.8; }
+.local-addr a{ color:var(--wine); }
+@media (max-width:800px){ .info-grid{ grid-template-columns:1fr; gap:40px; } }
+
+/* ---------- FOOTER ---------- */
+footer{ background:var(--charcoal); color:var(--cream); padding:64px 0 calc(32px + env(safe-area-inset-bottom,0px)); }
+.foot-grid{ display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between; }
+.foot-brand h3{ font-size:1.8rem; color:var(--white); }
+.foot-brand .tag{ font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--parchment); margin-top:6px; font-size:1rem; }
+.foot-col h4{ font-family:'Manrope',sans-serif; font-size:0.78rem; letter-spacing:0.14em; color:var(--brass); margin-bottom:14px; font-weight:600; }
+.foot-col a, .foot-col p{ display:block; font-size:0.92rem; color:rgba(245,241,232,0.82); margin-bottom:9px; }
+.foot-bottom{
+  margin-top:52px; padding-top:22px; border-top:1px solid var(--line-on-dark);
+  font-size:0.8rem; color:rgba(245,241,232,0.5); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+
+.icon{ width:16px; height:16px; flex:none; }
+
+html.splash-active, html.splash-active body{ overflow:hidden; height:100%; }
+
+.splash{
+  position:fixed; inset:0; z-index:400; background:var(--ink);
+  display:flex; align-items:center; justify-content:center;
+  transition:opacity .6s ease;
+}
+.splash-logo{
+  width:min(48vw, 210px); height:auto;
+  opacity:0; transform:scale(0.82);
+  animation:splashIn 1s cubic-bezier(.16,1,.3,1) .1s forwards;
+}
+@keyframes splashIn{ to{ opacity:1; transform:scale(1); } }
+.splash.hide{ opacity:0; pointer-events:none; }
+@media (prefers-reduced-motion: reduce){
+  .splash-logo{ animation:none; opacity:1; transform:none; }
+}
+</style>
+
+<script id="img-data">
+document.addEventListener('DOMContentLoaded', function(){
+window.__IMG__ = {"logoBadge": "logo.png", "hero": "hero.jpg", "ext": "fachada.jpg", "chef": "chef.jpg", "meat": "carne.jpg", "presunto": "presunto.jpg", "oxtail": "rabo-de-boi.jpg", "stew": "guisado.jpg", "shrimp": "camarao.jpg", "nata": "pastel-de-nata.jpg", "beer": "cerveja.jpg", "patio": "esplanada.jpg"};
+document.querySelectorAll('img[data-key]').forEach(function(img){
+  var k = img.getAttribute('data-key');
+  if(window.__IMG__[k]) img.src = window.__IMG__[k];
+});
+document.querySelectorAll('img[data-full-key]').forEach(function(img){
+  var k = img.getAttribute('data-full-key');
+  img.setAttribute('data-full', window.__IMG__[k] || '');
+});
+});
+</script>
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <img class="splash-logo" data-key="logoBadge" src="" alt="Oh Pereira — Casa de Pasto, desde 1930">
+</div>
+<script>
+(function(){
+  var splash = document.getElementById('splash');
+  if(!splash) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seen = false;
+  try{ seen = sessionStorage.getItem('ohpereira_splash_seen') === '1'; }catch(e){}
+
+  function remove(){
+    if(splash && splash.parentNode){ splash.parentNode.removeChild(splash); }
+  }
+
+  if(seen || reduce){
+    remove();
+    return;
+  }
+
+  document.documentElement.classList.add('splash-active');
+  var hidden = false;
+  function hide(){
+    if(hidden) return;
+    hidden = true;
+    splash.classList.add('hide');
+    document.documentElement.classList.remove('splash-active');
+    try{ sessionStorage.setItem('ohpereira_splash_seen', '1'); }catch(e){}
+    setTimeout(remove, 650);
+  }
+  var autoTimer = setTimeout(hide, 1600);
+  splash.addEventListener('click', function(){ clearTimeout(autoTimer); hide(); });
+})();
+</script>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" aria-label="Oh Pereira — Casa de Pasto">
+      <svg class="nav-badge" viewBox="0 0 100 100" fill="none">
+        <rect x="6" y="6" width="88" height="88" rx="10" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="10.5" y="10.5" width="79" height="79" rx="7" stroke="currentColor" stroke-width="0.6"/>
+        <text x="50" y="30" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6.4" letter-spacing="1" fill="currentColor">CASA DE PASTO</text>
+        <text x="50" y="52" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" fill="currentColor">OH</text>
+        <text x="50" y="70" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" fill="currentColor">PEREIRA</text>
+        <line x1="34" y1="76" x2="66" y2="76" stroke="currentColor" stroke-width="0.6"/>
+        <text x="50" y="84" text-anchor="middle" font-family="Manrope, sans-serif" font-size="5.6" letter-spacing="1.5" fill="currentColor">1930</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="#top">Início</a>
+      <a href="#casa">Sobre</a>
+      <a href="#carta">Menu</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#reservas">Contactos</a>
+    </div>
+    <a class="ig-pill" href="https://instagram.com/ohpereira_casadepasto" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      Instagram
+    </a>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mnav" id="mnav">
+  <a href="#top">Início</a>
+  <a href="#casa">Sobre</a>
+  <a href="#carta">Menu</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#reservas">Contactos</a>
+  <a href="https://instagram.com/ohpereira_casadepasto" target="_blank" rel="noopener" class="mnav-cta">Instagram</a>
+</div>
+
+<header class="hero" id="top">
+  <div class="hero-media">
+    <img class="hero-img" id="heroImg" data-key="hero" src="" alt="Esplanada e interior da Casa de Pasto Oh Pereira, à noite">
+  </div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Casa de Pasto Oh Pereira</p>
+      <h1>Tradição Portuguesa<em>desde 1930</em></h1>
+      <p class="hero-sub">No coração de Lisboa, o Oh Pereira mantém viva a verdadeira cozinha portuguesa, com sabor, história e um ambiente familiar.</p>
+      <div class="hero-ctas">
+        <a href="#carta" class="btn-line">
+          VER O NOSSO MENU
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-infobar">
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-6.1 7-11.6A7 7 0 0 0 5 9.4C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.4" r="2.4"/></svg>
+          <div><p class="l1">R. Arco do Cego 59</p><p class="l2">Lisboa, Portugal</p></div>
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <div><p class="l1">Segunda a sábado</p><a class="l2" href="#local">Ver todos os horários →</a></div>
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3v6a2 2 0 0 0 2 2v10M7 3v0M9 3v6M11 3v6M11 3v18M17 3c-2 0-3 2-3 5s1 5 3 5v8"/></svg>
+          <div><p class="l1">Comida tradicional portuguesa</p><p class="l2">Petiscos · Pratos típicos · Bebidas</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="casa pad" id="casa">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Desde 1930</p>
+      <h2>Uma casa portuguesa em Lisboa.</h2>
+    </div>
+    <div class="casa-grid">
+      <figure class="casa-big reveal"><img data-key="chef" src="" alt="Chef a preparar um prato na cozinha do Oh Pereira"></figure>
+      <figure class="casa-small reveal"><img data-key="meat" src="" alt="Corte de carne fresca preparada para a grelha"></figure>
+      <div class="casa-text reveal">
+        <p class="casa-cap">Cozinha aberta, ingredientes à vista.</p>
+        <p>O nome vem de longe — casa de pasto é como Lisboa sempre chamou aos lugares onde se comia bem, sem cerimónia, à mesa com quem se gosta de estar. É essa ideia que continua viva aqui, na Arco do Cego: bifes na grelha, petiscos para partilhar, queijos e enchidos escolhidos com cuidado.</p>
+        <p>Nada de pressa. As carnes vêm inteiras, as batatas fritas são feitas à hora, e o chouriço assa-se em fogo à vista, como sempre foi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gastro pad" id="gastro">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">A ementa</p>
+      <h2>À mesa, o que é nosso.</h2>
+    </div>
+
+    <div class="gastro-row reveal">
+      <div class="gastro-fig"><img data-key="presunto" src="" alt="Tábua de presunto e queijo"></div>
+      <div>
+        <h3 class="gastro-name serif">Queijos &amp; Enchidos</h3>
+        <div class="gastro-items">
+          <span>Tábua de queijos, presunto e chouriço assado</span>
+          <span>Queijo da Serra com marmelada</span>
+          <span>Presunto serrano</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gastro-row reveal">
+      <div class="gastro-fig"><img data-key="oxtail" src="" alt="Nacos de carne abafados com puré de batata"></div>
+      <div>
+        <h3 class="gastro-name serif">Sugestões para a grelha</h3>
+        <div class="gastro-items">
+          <span>Nacos de carne abafados</span>
+          <span>Bacalhau à lagareiro</span>
+          <span>Secretos de porco ibérico</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gastro-row reveal">
+      <div class="gastro-fig"><img data-key="shrimp" src="" alt="Camarão à Guilho servido na panela"></div>
+      <div>
+        <h3 class="gastro-name serif">Petiscos</h3>
+        <div class="gastro-items">
+          <span>Camarão à Guilho servido na panela</span>
+          <span>Ovos rotos, cogumelos e pimentos padrón</span>
+          <span>Moelas no tachinho</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gastro-row reveal">
+      <div class="gastro-fig"><img data-key="meat" src="" alt="Corte de bife fresco preparado para a grelha"></div>
+      <div>
+        <h3 class="gastro-name serif">Os nossos bifes</h3>
+        <div class="gastro-items">
+          <span>Bife à Cervejeiro, ao Alhinho ou à Mirandesa</span>
+          <span>À Portuguesa ou à Café</span>
+          <span>Bitoque na grelha</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gastro-row reveal">
+      <div class="gastro-fig"><img data-key="nata" src="" alt="Pastel de nata servido à mesa"></div>
+      <div>
+        <h3 class="gastro-name serif">Para terminar</h3>
+        <div class="gastro-items">
+          <span>Pastel de nata e um café</span>
+          <span>Salada de fruta da época</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="gastro-cta reveal"><a href="#carta" class="btn btn-outline">Ver a carta completa</a></p>
+  </div>
+</section>
+
+<section class="carta pad" id="carta">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Carta digital</p>
+      <h2>A carta, à mesa ou no telemóvel.</h2>
+    </div>
+    <nav class="tabs" id="tabs">
+      <a class="tab active" data-target="#cat-bifes" href="#cat-bifes">Bifes</a>
+      <a class="tab" data-target="#cat-petiscos" href="#cat-petiscos">Petiscos</a>
+      <a class="tab" data-target="#cat-grelha" href="#cat-grelha">Grelha</a>
+      <a class="tab" data-target="#cat-queijos" href="#cat-queijos">Queijos</a>
+      <a class="tab" data-target="#cat-acomp" href="#cat-acomp">Acompanhamentos</a>
+      <a class="tab" data-target="#cat-saladas" href="#cat-saladas">Saladas</a>
+    </nav>
+
+    <div class="menu-cat" id="cat-bifes">
+      <h3>Os nossos bifes</h3>
+      <p class="sub">Bife da vazia</p>
+      <div class="menu-list">
+        <div class="menu-item" data-idx="0" data-name="À Cervejeiro" data-price="20.50"><div class="row"><span class="name">À Cervejeiro</span><span class="fill"></span><span class="price">20,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="1" data-name="Ao Alhinho" data-price="20.50"><div class="row"><span class="name">Ao Alhinho</span><span class="fill"></span><span class="price">20,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="2" data-name="À Portuguesa" data-price="21.50"><div class="row"><span class="name">À Portuguesa</span><span class="fill"></span><span class="price">21,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="3" data-name="À Café" data-price="20.50"><div class="row"><span class="name">À Café</span><span class="fill"></span><span class="price">20,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="4" data-name="À Mirandesa" data-price="21.50"><div class="row"><span class="name">À Mirandesa</span><span class="fill"></span><span class="price">21,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="5" data-name="Na Grelha" data-price="19.00"><div class="row"><span class="name">Na Grelha</span><span class="fill"></span><span class="price">19,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="6" data-name="Bitoque à Cervejeiro (novilho)" data-price="15.00"><div class="row"><span class="name">Bitoque à Cervejeiro (novilho)</span><span class="fill"></span><span class="price">15,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="7" data-name="Bitoque na Grelha (novilho)" data-price="14.50"><div class="row"><span class="name">Bitoque na Grelha (novilho)</span><span class="fill"></span><span class="price">14,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="8" data-name="Bitoque de Frango à Cervejeiro" data-price="14.00"><div class="row"><span class="name">Bitoque de Frango à Cervejeiro</span><span class="fill"></span><span class="price">14,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat" id="cat-petiscos">
+      <h3>Petiscos</h3>
+      <p class="sub">Para partilhar à mesa</p>
+      <div class="menu-list">
+        <div class="menu-item" data-idx="9" data-name="Os Nossos Ovos Rotos" data-price="13.00"><div class="row"><span class="name">Os Nossos Ovos Rotos</span><span class="fill"></span><span class="price">13,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="10" data-name="Cogumelos Frescos Salteados" data-price="13.50"><div class="row"><span class="name">Cogumelos Frescos Salteados</span><span class="fill"></span><span class="price">13,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="11" data-name="Cogumelos Frescos Grelhados" data-price="10.00"><div class="row"><span class="name">Cogumelos Frescos Grelhados</span><span class="fill"></span><span class="price">10,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="12" data-name="Pimentos Padrón" data-price="10.00"><div class="row"><span class="name">Pimentos Padrón</span><span class="fill"></span><span class="price">10,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="13" data-name="Moelas no Tachinho" data-price="9.00"><div class="row"><span class="name">Moelas no Tachinho</span><span class="fill"></span><span class="price">9,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="14" data-name="Ovos Mexidos com Farinheira" data-price="12.00"><div class="row"><span class="name">Ovos Mexidos com Farinheira</span><span class="fill"></span><span class="price">12,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="15" data-name="Camarão à Guilho" data-price="16.00"><div class="row"><span class="name">Camarão à Guilho</span><span class="fill"></span><span class="price">16,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="16" data-name="Lapas da Madeira na Chapa" data-price="26.00"><div class="row"><span class="name">Lapas da Madeira na Chapa</span><span class="fill"></span><span class="price">26,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="17" data-name="Mexilhões à Espanhola" data-price="15.00"><div class="row"><span class="name">Mexilhões à Espanhola</span><span class="fill"></span><span class="price">15,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="18" data-name="Pica-Pau de Novilho" data-price="14.00"><div class="row"><span class="name">Pica-Pau de Novilho</span><span class="fill"></span><span class="price">14,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="19" data-name="Pica-Pau de Porco à Portuguesa" data-price="10.00"><div class="row"><span class="name">Pica-Pau de Porco à Portuguesa</span><span class="fill"></span><span class="price">10,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat" id="cat-grelha">
+      <h3>Sugestões para a grelha</h3>
+      <p class="sub">Direto do carvão</p>
+      <div class="menu-list">
+        <div class="menu-item" data-idx="20" data-name="Bacalhau à Lagareiro" data-price="22.00"><div class="row"><span class="name">Bacalhau à Lagareiro</span><span class="fill"></span><span class="price">22,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="21" data-name="Nacos de Carne Abafados" data-price="17.00"><div class="row"><span class="name">Nacos de Carne Abafados</span><span class="fill"></span><span class="price">17,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="22" data-name="Espetada de Novilho c/ Bacon" data-price="18.00"><div class="row"><span class="name">Espetada de Novilho c/ Bacon</span><span class="fill"></span><span class="price">18,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="23" data-name="Secretos de Porco Ibérico" data-price="17.00"><div class="row"><span class="name">Secretos de Porco Ibérico</span><span class="fill"></span><span class="price">17,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="24" data-name="Picanha Fatiada" data-price="19.00"><div class="row"><span class="name">Picanha Fatiada</span><span class="fill"></span><span class="price">19,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="25" data-name="Hambúrguer c/ Ovo e Molho Cervejeiro" data-price="14.50"><div class="row"><span class="name">Hambúrguer c/ Ovo e Molho Cervejeiro</span><span class="fill"></span><span class="price">14,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="26" data-name="Peito de Frango c/ Maionese de Alho" data-price="13.00"><div class="row"><span class="name">Peito de Frango c/ Maionese de Alho</span><span class="fill"></span><span class="price">13,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="27" data-name="Bifanas à Casa de Pasto" data-price="14.00"><div class="row"><span class="name">Bifanas à Casa de Pasto</span><span class="fill"></span><span class="price">14,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat" id="cat-queijos">
+      <h3>Queijos &amp; Enchidos</h3>
+      <p class="sub">Da tábua ao fumeiro</p>
+      <div class="menu-list">
+        <div class="menu-item" data-idx="28" data-name="Tábua de Queijos" data-price="16.00"><div class="row"><span class="name">Tábua de Queijos</span><span class="fill"></span><span class="price">16,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="29" data-name="Tábua de Queijo e Presunto" data-price="13.50"><div class="row"><span class="name">Tábua de Queijo e Presunto</span><span class="fill"></span><span class="price">13,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="30" data-name="Tábua Especial" data-price="17.50"><div class="row"><span class="name">Tábua Especial</span><span class="fill"></span><span class="price">17,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="31" data-name="Queijo da Serra com Marmelada± 100 g" data-price="9.50"><div class="row"><span class="name">Queijo da Serra com Marmelada<span class="note">± 100 g</span></span><span class="fill"></span><span class="price">9,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="32" data-name="Queijo Manchego — cura 12 meses" data-price="10.00"><div class="row"><span class="name">Queijo Manchego — cura 12 meses</span><span class="fill"></span><span class="price">10,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="33" data-name="Queijo Fresco de Cabra" data-price="4.00"><div class="row"><span class="name">Queijo Fresco de Cabra</span><span class="fill"></span><span class="price">4,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="34" data-name="Alheira Mirandesa" data-price="10.00"><div class="row"><span class="name">Alheira Mirandesa</span><span class="fill"></span><span class="price">10,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="35" data-name="Chouriço Assado" data-price="10.00"><div class="row"><span class="name">Chouriço Assado</span><span class="fill"></span><span class="price">10,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="36" data-name="Presunto Serrano" data-price="12.50"><div class="row"><span class="name">Presunto Serrano</span><span class="fill"></span><span class="price">12,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat" id="cat-acomp">
+      <h3>Acompanhamentos</h3>
+      <p class="sub">&nbsp;</p>
+      <div class="menu-list">
+        <div class="menu-item" data-idx="37" data-name="Cascas de Batata c/ Maionese de Alho" data-price="4.50"><div class="row"><span class="name">Cascas de Batata c/ Maionese de Alho</span><span class="fill"></span><span class="price">4,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="38" data-name="Batata Frita à Rodela" data-price="2.75"><div class="row"><span class="name">Batata Frita à Rodela</span><span class="fill"></span><span class="price">2,75 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="39" data-name="Arroz de Feijão" data-price="3.75"><div class="row"><span class="name">Arroz de Feijão</span><span class="fill"></span><span class="price">3,75 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="40" data-name="Legumes do Dia" data-price="4.95"><div class="row"><span class="name">Legumes do Dia</span><span class="fill"></span><span class="price">4,95 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="41" data-name="Esparregado" data-price="5.50"><div class="row"><span class="name">Esparregado</span><span class="fill"></span><span class="price">5,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="42" data-name="Batata Doce Frita Palito" data-price="6.50"><div class="row"><span class="name">Batata Doce Frita Palito</span><span class="fill"></span><span class="price">6,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+      </div>
+    </div>
+
+    <div class="menu-cat" id="cat-saladas">
+      <h3>Saladas</h3>
+      <p class="sub">&nbsp;</p>
+      <div class="menu-list">
+        <div class="menu-item" data-idx="43" data-name="Rúcula, Queijo Fresco de Cabra e Pesto" data-price="10.00"><div class="row"><span class="name">Rúcula, Queijo Fresco de Cabra e Pesto</span><span class="fill"></span><span class="price">10,00 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="44" data-name="Salada à Casa de Pasto" data-price="12.50"><div class="row"><span class="name">Salada à Casa de Pasto</span><span class="fill"></span><span class="price">12,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="45" data-name="Salada de Tomate e Orégãos" data-price="3.75"><div class="row"><span class="name">Salada de Tomate e Orégãos</span><span class="fill"></span><span class="price">3,75 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="46" data-name="Salada de Alface e Agrião" data-price="3.75"><div class="row"><span class="name">Salada de Alface e Agrião</span><span class="fill"></span><span class="price">3,75 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+        <div class="menu-item" data-idx="47" data-name="Salada Mista" data-price="4.50"><div class="row"><span class="name">Salada Mista</span><span class="fill"></span><span class="price">4,50 €</span></div><div class="qty-stepper"><button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">&minus;</button><span class="qty-count">0</span><button type="button" class="qty-btn plus" aria-label="Adicionar ao pedido">+</button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cart-bar" id="cartBar">
+  <div class="cart-bar-inner">
+    <div class="cart-info">
+      <strong id="cartCount">0 itens</strong>
+      <span id="cartTotal">Total 0,00 €</span>
+    </div>
+    <a href="#" id="cartSendBtn" class="send-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.2.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.4.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/></svg>
+      Pedir no WhatsApp
+    </a>
+  </div>
+</div>
+
+<section class="exper pad" id="experiencia">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Para além do prato</p>
+      <h2>Mais do que uma refeição.</h2>
+    </div>
+    <p class="exper-text reveal">A esplanada enche cedo, o barril de cerveja gelada nunca para, e há sempre uma mesa de amigos a partilhar petiscos até tarde. É esse o ritmo da casa — sem pressa, com boa companhia.</p>
+    <div class="exper-grid">
+      <figure class="exper-fig reveal"><img data-key="ext" src="" alt="Fachada e esplanada do Oh Pereira"></figure>
+      <figure class="exper-fig reveal"><img data-key="beer" src="" alt="Torneira de cerveja artesanal ao balcão"></figure>
+      <figure class="exper-fig reveal"><img data-key="patio" src="" alt="Mesa na esplanada com cerveja e tremoços"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="galeria pad" id="galeria">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Instantâneos</p>
+      <h2>Da cozinha à mesa.</h2>
+    </div>
+    <div class="mason" id="mason">
+      <figure class="reveal"><img data-key="ext" src="" alt="Fachada do Oh Pereira" data-full-key="ext"></figure>
+      <figure class="reveal"><img data-key="presunto" src="" alt="Tábua de presunto" data-full-key="presunto"></figure>
+      <figure class="reveal"><img data-key="stew" src="" alt="Feijoada" data-full-key="stew"></figure>
+      <figure class="reveal"><img data-key="nata" src="" alt="Pastel de nata" data-full-key="nata"></figure>
+      <figure class="reveal"><img data-key="meat" src="" alt="Carne fresca" data-full-key="meat"></figure>
+      <figure class="reveal"><img data-key="beer" src="" alt="Torneira de cerveja" data-full-key="beer"></figure>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<section class="reserva pad" id="reservas">
+  <div class="wrap">
+    <p class="kicker reveal">Marque já</p>
+    <h2 class="reveal">Reserve a sua mesa.</h2>
+    <p class="reserva-sub reveal">Escreva-nos pelo WhatsApp ou ligue diretamente — respondemos o mais rápido possível.</p>
+    <div class="reserva-ctas reveal">
+      <a class="btn btn-solid" href="https://wa.me/351914722810" target="_blank" rel="noopener">Reservar mesa</a>
+      <a class="btn btn-outline" href="tel:+351914722810">Ligar</a>
+    </div>
+    <p class="reserva-addr reveal">R. Arco do Cego 59, 1000-146 Lisboa, Portugal<br>+351 914 722 810</p>
+  </div>
+</section>
+
+<section class="info pad" id="local">
+  <div class="wrap">
+    <div class="info-grid">
+      <div class="reveal" id="horario">
+        <p class="kicker">Horário</p>
+        <h2 class="h2-sub">Quando estamos abertos.</h2>
+        <div class="hours-list" id="hoursList">
+          <div class="hours-row" data-day="1"><span>Segunda-feira</span><span>12:00 – 23:00</span></div>
+          <div class="hours-row" data-day="2"><span>Terça-feira</span><span>12:00 – 23:00</span></div>
+          <div class="hours-row" data-day="3"><span>Quarta-feira</span><span>12:00 – 23:00</span></div>
+          <div class="hours-row" data-day="4"><span>Quinta-feira</span><span>12:00 – 23:00</span></div>
+          <div class="hours-row" data-day="5"><span>Sexta-feira</span><span>12:00 – 00:00</span></div>
+          <div class="hours-row" data-day="6"><span>Sábado</span><span>12:00 – 17:00</span></div>
+          <div class="hours-row" data-day="0"><span>Domingo</span><span>Encerrado</span></div>
+        </div>
+      </div>
+      <div class="reveal" id="local-inner">
+        <p class="kicker">Encontre-nos em Lisboa</p>
+        <h2 class="h2-sub">Arco do Cego.</h2>
+        <div class="map-frame">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#181818"/>
+            <g stroke="rgba(245,241,232,0.16)" stroke-width="1">
+              <line x1="0" y1="40" x2="400" y2="40"/>
+              <line x1="0" y1="260" x2="400" y2="260"/>
+              <line x1="40" y1="0" x2="40" y2="300"/>
+              <line x1="360" y1="0" x2="360" y2="300"/>
+            </g>
+            <g stroke="rgba(245,241,232,0.5)" stroke-width="2.5" fill="none">
+              <path d="M100,0 L100,300"/>
+              <path d="M300,0 L300,80 Q300,110 330,120 L400,140"/>
+            </g>
+            <g stroke="var(--brass)" stroke-width="3.5" fill="none">
+              <path d="M0,150 L400,150"/>
+            </g>
+            <text x="100" y="22" fill="rgba(245,241,232,0.55)" font-family="Manrope, sans-serif" font-size="10" text-anchor="middle">Av. de Roma</text>
+            <text x="345" y="60" fill="rgba(245,241,232,0.55)" font-family="Manrope, sans-serif" font-size="10" text-anchor="middle">Av. João XXI</text>
+            <text x="392" y="152" fill="rgba(245,241,232,0.55)" font-family="Manrope, sans-serif" font-size="10" text-anchor="end">Campo Pequeno</text>
+            <text x="200" y="140" fill="var(--brass)" font-family="Manrope, sans-serif" font-size="11" font-weight="600" text-anchor="middle">R. Arco do Cego</text>
+          </svg>
+          <div class="map-pin" style="left:52%; top:50%;">
+            <svg width="34" height="44" viewBox="0 0 24 32" fill="none">
+              <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 20 12 20s12-11 12-20C24 5.4 18.6 0 12 0z" fill="#6B1E23"/>
+              <circle cx="12" cy="12" r="4.5" fill="#F5F1E8"/>
+            </svg>
+          </div>
+        </div>
+        <p class="local-addr">R. Arco do Cego 59, 1000-146 Lisboa, Portugal<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=R.+Arco+do+Cego+59+Lisboa" target="_blank" rel="noopener">Ver mapa real e como chegar →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <h3 class="serif">OH PEREIRA</h3>
+        <p class="tag">Casa de pasto e tradição portuguesa à mesa.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navegar</h4>
+        <a href="#top">Início</a>
+        <a href="#casa">Sobre</a>
+        <a href="#carta">Menu</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#reservas">Contactos</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contacto</h4>
+        <a href="tel:+351914722810">+351 914 722 810</a>
+        <a href="https://instagram.com/ohpereira_casadepasto" target="_blank" rel="noopener">@ohpereira_casadepasto</a>
+        <p>R. Arco do Cego 59, Lisboa</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Oh Pereira — Casa de Pasto</span>
+      <span>Lisboa, Portugal</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  var heroImg = document.getElementById('heroImg');
+  var heroEl = document.getElementById('top');
+  var ticking = false;
+
+  var onScroll = function(){
+    if(window.scrollY > 40){ nav.classList.add('solid'); } else { nav.classList.remove('solid'); }
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        if(heroImg && heroEl){
+          var h = heroEl.offsetHeight;
+          var p = Math.min(Math.max(window.scrollY / h, 0), 1.2);
+          heroImg.style.transform = 'translateY(' + (p * 60) + 'px)';
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---- efeito magnético nos botões principais ---- */
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduceMotion){
+    document.querySelectorAll('.btn, .nav-cta').forEach(function(btn){
+      btn.style.transition = 'transform .35s cubic-bezier(.2,.9,.25,1)';
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var relX = e.clientX - (r.left + r.width/2);
+        var relY = e.clientY - (r.top + r.height/2);
+        btn.style.transition = 'transform .12s ease-out';
+        btn.style.transform = 'translate(' + (relX*0.28) + 'px,' + (relY*0.32) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function(){
+        btn.style.transition = 'transform .5s cubic-bezier(.2,.9,.2,1.4)';
+        btn.style.transform = 'translate(0,0)';
+      });
+    });
+  }
+
+  /* ---- atraso escalonado por grupo, antes de observar ---- */
+  var groups = new Map();
+  document.querySelectorAll('.reveal').forEach(function(el){
+    var host = el.closest('section') || el.parentElement;
+    if(!groups.has(host)) groups.set(host, []);
+    groups.get(host).push(el);
+  });
+  groups.forEach(function(list){
+    list.forEach(function(el, idx){
+      el.style.transitionDelay = (Math.min(idx,5) * 90) + 'ms';
+    });
+  });
+
+  var burger = document.getElementById('burgerBtn');
+  var mnav = document.getElementById('mnav');
+  burger.addEventListener('click', function(){
+    var open = mnav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mnav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  var tabs = document.querySelectorAll('.tab');
+  var cats = document.querySelectorAll('.menu-cat');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.remove('active'); });
+      t.classList.add('active');
+    });
+  });
+  if('IntersectionObserver' in window){
+    var catIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var id = '#' + e.target.id;
+          tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('data-target') === id); });
+        }
+      });
+    }, {rootMargin:'-160px 0px -70% 0px'});
+    cats.forEach(function(c){ catIo.observe(c); });
+  }
+
+  var mason = document.getElementById('mason');
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  mason.querySelectorAll('img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lbImg.src = img.getAttribute('data-full');
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', function(){ lb.classList.remove('open'); });
+  lb.addEventListener('click', function(e){ if(e.target === lb){ lb.classList.remove('open'); } });
+
+  try{
+    var today = new Date().getDay();
+    var row = document.querySelector('.hours-row[data-day="'+today+'"]');
+    if(row){ row.classList.add('today'); }
+  }catch(e){}
+
+  /* ---- carrinho da carta ---- */
+  var WHATSAPP_NUMBER = '351914722810';
+  var cart = {};
+  var items = document.querySelectorAll('.menu-item');
+  var cartBar = document.getElementById('cartBar');
+  var cartCountEl = document.getElementById('cartCount');
+  var cartTotalEl = document.getElementById('cartTotal');
+  var cartSendBtn = document.getElementById('cartSendBtn');
+
+  function formatEuro(n){
+    return n.toFixed(2).replace('.', ',') + ' €';
+  }
+
+  function updateCartBar(){
+    var count = 0, total = 0;
+    Object.keys(cart).forEach(function(idx){
+      var qty = cart[idx];
+      if(qty > 0){
+        count += qty;
+        var el = document.querySelector('.menu-item[data-idx="'+idx+'"]');
+        total += qty * parseFloat(el.getAttribute('data-price'));
+      }
+    });
+    cartCountEl.textContent = count + (count === 1 ? ' item' : ' itens');
+    cartTotalEl.textContent = 'Total ' + formatEuro(total);
+    cartBar.classList.toggle('show', count > 0);
+
+    var lines = ['Olá! Gostaria de fazer o seguinte pedido:', ''];
+    items.forEach(function(el){
+      var idx = el.getAttribute('data-idx');
+      var qty = cart[idx] || 0;
+      if(qty > 0){
+        lines.push(qty + 'x ' + el.getAttribute('data-name') + ' — ' + formatEuro(qty * parseFloat(el.getAttribute('data-price'))));
+      }
+    });
+    lines.push('');
+    lines.push('Total: ' + formatEuro(total));
+    var text = encodeURIComponent(lines.join('\n'));
+    cartSendBtn.setAttribute('href', 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + text);
+  }
+
+  items.forEach(function(el){
+    var idx = el.getAttribute('data-idx');
+    cart[idx] = 0;
+    var countEl = el.querySelector('.qty-count');
+    var minusBtn = el.querySelector('.qty-btn.minus');
+    var plusBtn = el.querySelector('.qty-btn.plus');
+    function render(){
+      countEl.textContent = cart[idx];
+      el.classList.toggle('in-cart', cart[idx] > 0);
+    }
+    plusBtn.addEventListener('click', function(){
+      cart[idx] = Math.min(cart[idx] + 1, 20);
+      render();
+      updateCartBar();
+    });
+    minusBtn.addEventListener('click', function(){
+      cart[idx] = Math.max(cart[idx] - 1, 0);
+      render();
+      updateCartBar();
+    });
+  });
+  updateCartBar();
+})();
+</script>
+</body>
+</html>
